@@ -7,8 +7,10 @@ import logging
 
 logging.basicConfig(filename='botlog.log', level=logging.INFO, format='%(asctime)s %(levelname)s - %(message)s',\
     datefmt='%d/%m/%Y %I:%M:%S %p')
-url = 'https://docs.google.com/spreadsheets/d/1hLteGvuivpi-l5mZYowghWjB-vbILK2JnStf0IN6lfc'
-url_sorted = "https://docs.google.com/spreadsheets/d/1fZKnEYJ9gxAZBEZCHDeK5UO69AdiRVisd89ltNaNd10"
+
+with open("url.txt", "r") as f:
+    url, url_sorted = f.readlines()
+
 MIN_MAPPINGS = {\
     'Media & Publicity Team': 'media',
     'AV Team': 'tech',
